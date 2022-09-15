@@ -1,0 +1,44 @@
+host: localhost:8080
+info:
+  contact: {}
+  description: 这是一个工时预警系统
+  title: 工时预警系统API
+  version: "1.0"
+paths:
+  /lazyBoys:
+    get:
+      consumes:
+      - application/json
+      description: 通过请求参数，通知指定人员的今日或者上个工作日工时填写情况。
+      parameters:
+      - description: 查询类型 0：查询上个工作日工时填写情况；1：查询今日工时填写情况
+        in: query
+        name: type
+        required: true
+        type: string
+      - description: 待查询小组成员 由成员拼音组成，成员之间用|隔开
+        in: query
+        name: users
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: code":400,"msg":"type参数输入有误"}
+          schema:
+            type: string
+        "600":
+          description: code":600,"msg":"请求参数中包含错误的小组成员或成员名有误"}
+          schema:
+            type: string
+        "700":
+          description: '{"code":700,"msg":"今天为非工作日，无需查询以及通报"}'
+          schema:
+            type: string
+      summary: 工时预警接口
+swagger: "2.0"
