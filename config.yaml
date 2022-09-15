@@ -1,0 +1,14 @@
+database:
+  url: 10.251.36.199
+  userName: work
+  password: Work@1234
+  dbname: l_toolbox
+  post: 3306
+
+group:
+  one: chenziang
+  two: fengyuangen
+  three: liling
+  four: tangjie
+  five: xuzhuo
+  six: yuguo
