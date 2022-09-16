@@ -1,4 +1,4 @@
-package enity
+package pojo
 
 import (
 	"gorm.io/gorm"

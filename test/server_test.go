@@ -41,5 +41,5 @@ func TestGroup(t *testing.T) {
 }
 
 func Test2(t *testing.T) {
-	conf.InitMysql()
+
 }
